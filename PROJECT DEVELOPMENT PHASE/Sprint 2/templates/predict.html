@@ -1,0 +1,285 @@
+<!DOCTYPE html> 
+<html> 
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Sample Predict </title>
+<style> 
+Body {
+  font-family: Calibri, Helvetica, sans-serif;
+  background-color: rgb(130, 172, 107);
+}
+button { 
+       background-color: #5fdf63; 
+       width: 100%;
+        color: rgb(250, 251, 252); 
+        padding: 15px; 
+        margin: 10px 0px; 
+        border: none; 
+        cursor: pointer; 
+         } 
+         
+input {
+
+/* styling */
+background-color: white;
+border: thin solid rgb(0, 0, 255);
+border-radius: 14px;
+display: inline-block;
+font: inherit;
+line-height: 0.1em;
+padding: 0.5em 3.5em 0.5em 1em;
+
+/* reset */s
+
+margin: 0;      
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-appearance: none;
+-moz-appearance: none;
+}
+
+
+/* arrows */
+
+select {
+
+/* styling */
+background-color: rgb(245, 239, 242);
+border: thin solid blue;
+border-radius: 14px;
+display: inline-block;
+font: inherit;
+line-height: 1.5em;
+padding: 0.5em 3.5em 0.5em 1em;
+
+/* reset */
+
+margin: 0;      
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-appearance: none;
+-moz-appearance: none;
+}
+
+
+/* arrows */
+
+select.classic {
+background-image:
+  linear-gradient(45deg, transparent 50%, rgb(147, 25, 63) 50%),
+  linear-gradient(135deg, rgb(68, 198, 57) 50%, transparent 50%),
+  linear-gradient(to right, rgb(201, 31, 190), rgb(13, 45, 57));
+background-position:
+  calc(100% - 20px) calc(1em + 2px),
+  calc(100% - 15px) calc(1em + 2px),
+  100% 0;
+background-size:
+  5px 5px,
+  5px 5px,
+  2.5em 2.5em;
+background-repeat: no-repeat;
+}
+
+select.classic:focus {
+background-image:
+  linear-gradient(45deg, white 50%, transparent 50%),
+  linear-gradient(135deg, transparent 50%, white 50%),
+  linear-gradient(to right, gray, gray);
+background-position:
+  calc(100% - 15px) 1em,
+  calc(100% - 20px) 1em,
+  100% 0;
+background-size:
+  5px 5px,
+  5px 5px,
+  2.5em 2.5em;
+background-repeat: no-repeat;
+border-color: grey;
+outline: 0;
+}
+
+
+
+
+select.round {
+background-image:
+  linear-gradient(45deg, transparent 50%, gray 50%),
+  linear-gradient(135deg, gray 50%, transparent 50%),
+  radial-gradient(#ddd 70%, transparent 72%);
+background-position:
+  calc(100% - 20px) calc(1em + 2px),
+  calc(100% - 15px) calc(1em + 2px),
+  calc(100% - .5em) .5em;
+background-size:
+  5px 5px,
+  5px 5px,
+  1.5em 1.5em;
+background-repeat: no-repeat;
+}
+
+select.round:focus {
+background-image:
+  linear-gradient(45deg, white 50%, transparent 50%),
+  linear-gradient(135deg, transparent 50%, white 50%),
+  radial-gradient(gray 70%, transparent 72%);
+background-position:
+  calc(100% - 15px) 1em,
+  calc(100% - 20px) 1em,
+  calc(100% - .5em) .5em;
+background-size:
+  5px 5px,
+  5px 5px,
+  1.5em 1.5em;
+background-repeat: no-repeat;
+border-color: green;
+outline: 0;
+}
+
+
+
+
+
+select.minimal {
+background-image:
+  linear-gradient(45deg, transparent 50%, gray 50%),
+  linear-gradient(135deg, gray 50%, transparent 50%),
+  linear-gradient(to right, #ccc, #ccc);
+background-position:
+  calc(100% - 20px) calc(1em + 2px),
+  calc(100% - 15px) calc(1em + 2px),
+  calc(100% - 2.5em) 0.5em;
+background-size:
+  5px 5px,
+  5px 5px,
+  1px 1.5em;
+background-repeat: no-repeat;
+}
+
+select.minimal:focus {
+background-image:
+  linear-gradient(45deg, green 50%, transparent 50%),
+  linear-gradient(135deg, transparent 50%, green 50%),
+  linear-gradient(to right, #ccc, #ccc);
+background-position:
+  calc(100% - 15px) 1em,
+  calc(100% - 20px) 1em,
+  calc(100% - 2.5em) 0.5em;
+background-size:
+  5px 5px,
+  5px 5px,
+  1px 1.5em;
+background-repeat: no-repeat;
+border-color: green;
+outline: 0;
+}
+
+
+select:-moz-focusring {
+color: transparent;
+text-shadow: 0 0 0 #000;
+}
+
+
+
+ form { 
+        border: 3px solid #db9cea; 
+    } 
+ input[type=text], input[type=password] 
+       { 
+        width: 100%; 
+        margin: 8px 0;
+        padding: 12px 20px; 
+        display: inline-block; 
+        border: 2px solid #d3e970; 
+        box-sizing: border-box; 
+    }
+ button:hover { 
+        opacity: 0.7; 
+    } 
+  .cancelbtn { 
+        width: auto; 
+        padding: 10px 18px;
+        margin: 10px 5px;
+    } 
+      
+   
+ .container { 
+        padding: 25px; 
+        background-color: rgb(129, 211, 231);
+    } 
+</style> 
+</head>  
+<body>  
+    <center> <h1> Sample Enter your Details for Loan Approval Prediction </h1> </center> 
+    <center> <h2>
+    <form action="/output" method="post">
+        <div class="container"> 
+
+            <label for="">Choose a Gender</label> <br>
+            <select name="Gender" id="Gendeer" style="width:400px;" class="minimal"> 
+            <option value=1>Men</option>
+            <option value=0>Women</option>
+            </select>
+            <br>
+            <label for="">Choose a Married</label> <br>
+            <select name="Married" id="Married" style="width:400px;" class="minimal">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+            </select>
+            <br>
+            <label for="">Choose a Dependents</label> <br>
+            <select name="Dependents" id="Dependents" style="width:400px;" class="minimal">
+            <option value=0>0</option>
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            </select>
+            <br>
+            <label for="">Choose a Education</label> <br>
+            <select name="Education" id="Education" style="width:400px;"class="minimal">
+            <option value=0>Graduate</option>
+            <option value=1>Not Graduate</option>
+            </select>
+            <br>
+            <label for="">Choose a Self_Employed</label> <br>
+            <select name="Self_Employed" id="Self_Employed" style="width:400px;"class="minimal">
+            <option value=0>No</option>
+            <option value=1>Yes</option>
+            </select>
+            <br>
+			<label>ApplicantIncome  </label>  <br>
+            <input type="number" placeholder="Income" name="applicantIncome" value="4000" style="width:400px;" required>
+            <br>
+             	<label>CoapplicantIncome</label>  <br>
+            <input type="number" placeholder="Your CoapplicantIncome..." name="CoapplicantIncome" value="1000" style="width:400px;" required>
+            <br>
+			<label>Loan Amount</label>  <br>
+            <input type="number" placeholder="Enter the Loan Amount..." name="loanamount" value="120"  style="width:400px;" required>
+            <br>
+            <label for="">Choose a Loan_Amount_Term</label> <br>
+            <input type="number" placeholder="Enter Loan Amount Term..." name="Loan_Amount_Term..." value="360" style="width: 400px;" required>
+            </select>
+            <br>
+            <label for="">Choose a Credit_History</label> <br>
+            <select name="Credit_History" id="Credit_History" style="width:400px;"class="minimal">
+            <option value=0>0</option>
+            <option value=1>1</option>
+            </select>
+            <br>
+              
+            <label for="">Choose a Property_Area</label> <br>
+            <select name="Property_Area" id="Property_Area" style="width:400px;"class="minimal">
+            <option value=0>Urban</option>
+            <option value=1>Rural</option>
+            <option value=1>Semiurban</option>
+            </select>
+
+            
+            <button type="submit">Submit</button>
+        </div> 
+    </form>  </h2> 
+</center>
+</body>   
+</html>
